@@ -1,5 +1,8 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+import { CsvViewer } from "./quartz/components"
+import { BookGrid } from "./quartz/components"
+
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -18,6 +21,7 @@ export const sharedPageComponents: SharedLayout = {
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
     Component.Breadcrumbs(),
+    BookGrid(),
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
@@ -48,3 +52,5 @@ export const defaultListPageLayout: PageLayout = {
   ],
   right: [],
 }
+
+

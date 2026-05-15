@@ -1,0 +1,7 @@
+views:
+  - type: cards
+    name: Table
+    order:
+      - file.name
+      - file.basename
+      - file.ctime
