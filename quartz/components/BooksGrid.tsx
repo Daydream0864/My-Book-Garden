@@ -21,7 +21,13 @@ export default (() => {
             const coverUrl = page.frontmatter?.cover || page.frontmatter?.coverSmallUrl || "/static/icon.png"
             const author = page.frontmatter?.author || "Unbekannter Autor"
             const status = page.frontmatter?.status || "Ungelesen"
+//---------
 
+            
+
+
+
+//--------
             return (
               <a href={resolveRelative(fileData.slug!, page.slug!)} className="book-card" key={page.slug}>
                 <div className="book-cover-wrapper">

@@ -280,3 +280,33 @@ Whenever modifying `.inline.ts` layout hooks or creating physical system files, 
 # Force a clean development pipeline restart
 npx quartz build --serve
 ```
+
+
+# NOTE
+
+To handle frontmatter property variations natively inside Quartz, you can update the conditional image checking logic using a standard JavaScript logical OR (||) fallback chain.
+
+// ... inside your bookPages.map() loop within quartz/components/BookGrid.tsx
+{bookPages.map((page) => {
+  const title = page.frontmatter?.title || page.slug?.replace("Books/", "")
+  const author = page.frontmatter?.author || "Unknown Author"
+  const status = page.frontmatter?.status || "Unread"
+  
+  // Dynamic parsing checks both properties sequentially
+  const coverUrl = page.frontmatter?.cover || page.frontmatter?.coverSmallUrl || "/static/icon.png"
+
+  return (
+    <a href={resolveRelative(fileData.slug!, page.slug!)} className="book-card" key={page.slug}>
+      <div className="book-cover-wrapper">
+        <img src={coverUrl} alt={title} loading="lazy" />
+      </div>
+      <div className="book-info">
+        <div className="book-title">{title}</div>
+        <div className="book-author">{author}</div>
+        <span className={`book-status status-${status.toLowerCase().replace(/\s+/g, '-')}`}>
+          {status}
+        </span>
+      </div>
+    </a>
+  )
+})}
