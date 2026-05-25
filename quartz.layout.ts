@@ -21,7 +21,7 @@ export const sharedPageComponents: SharedLayout = {
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
     Component.Breadcrumbs(),
-    BookGrid(),
+    Component.BookGrid(),
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
@@ -34,7 +34,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Explorer(),
   ],
   right: [
-    Component.Graph(),
+    //Component.Graph(),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
   ],

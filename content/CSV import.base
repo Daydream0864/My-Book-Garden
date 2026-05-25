@@ -1,7 +1,0 @@
-filters: file.folder == "CSV import"
-views:
-  - type: table
-    name: Table
-    order:
-      - file.name
-      - eedede
