@@ -20,7 +20,7 @@ export default (() => {
             //const coverUrl = page.frontmatter?.cover || "/static/icon.png" // Fallback-Bild
             const coverUrl = page.frontmatter?.cover || page.frontmatter?.coverSmallUrl || "/static/icon.png"
             const author = page.frontmatter?.author || "Unbekannter Autor"
-            const status = page.frontmatter?.status || "Ungelesen"
+            const status = page.frontmatter?.status || " "
 //---------
 
             
